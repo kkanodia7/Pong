@@ -39,17 +39,15 @@ while not game_mode:
         while not spec_mode:
             spec_mode = input("Player Modes: Easy(1) or Hard(2)? ")
             if spec_mode == "1":
-                tracker = 300
-                tracker2 = 900
                 enemy_speed = 1.5
                 enemy_mode = "1"
             elif spec_mode == "2":
-                tracker = 1200
-                tracker2 = 0
                 enemy_speed = 2
                 enemy_mode = "2"
             elif spec_mode != "1" and spec_mode != "2":
                 spec_mode = False
+
+    '''
     while track_distance is False and (enemy_mode == "1" or enemy_mode == "2" or game_mode == "3"):
         track_distance = input("Enemy Vision Distance: 300(1), 600(2), 900(3), or 1200(4)? ")
         if track_distance == "1":
@@ -62,17 +60,22 @@ while not game_mode:
             tracker, tracker2 = 1200, 0
         else:
             track_distance = False
-
+    '''
+    tracker, tracker2 = 1200, 0         # Removed distance choice, as it was deemed unnecessary
     if game_mode != "1" and game_mode != "2" and game_mode != "3":
         game_mode = False
 while player1mode is False and game_mode != "3":
     player1mode = input("Player 1 Mode: Control(1) or Constant(2)? ")
     if player1mode != "1" and player1mode != "2":
         player1mode = False
+
+'''
 while turns is False and enemy_mode != "4":
     turns = input("Turns: Yes(1) or No(2)? ")
     if turns != "1" and turns != "2":
         turns = False
+'''
+turns = False                           # Removed turns choice, as it was deemed unnecessary
 
 print("\n\n")
 
@@ -219,3 +222,9 @@ while True:
     if first:
         pygame.time.wait(1000)
         first = False
+
+
+# Potential Future Features
+#   - More modes in the game
+#   - Ask user to play again upon victory or defeat
+#   - Graphical interface for starting questions
